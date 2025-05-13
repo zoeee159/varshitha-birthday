@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Varshitha!</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      color: #8e44ad;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 50px;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
+    p {
+      font-size: 1.5em;
+      margin: 20px;
+    }
+    img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #888;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff69b4; }
+      to { text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493; }
+    }
+    #popup {
+      background-color: #fff0fa;
+      border: 2px solid #ff6ec7;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 1.2em;
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      box-shadow: 0 0 10px #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Happy Birthday Varshitha! 🎉</h1>
+  <p>Wishing you endless joy, laughter, and cake!</p>
+  <img src="varshitha.jpg" alt="Varshitha's photo">
+  <p>You are amazing and deserve all the happiness in the world 💖</p>
+
+  <!-- Surprise Popup -->
+  <div id="popup">🎁 Surprise! You're loved more than cake!</div>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="birthday-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    // Launch confetti burst
+    function launchConfetti() {
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }
+
+    // Show popup
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 4000);
+    }
+
+    // Launch confetti every 3 seconds and show popup once
+    window.onload = () => {
+      launchConfetti();
+      setTimeout(launchConfetti, 3000);
+      showPopup();
+    };
+  </script>
+
+</body>
+</html>
